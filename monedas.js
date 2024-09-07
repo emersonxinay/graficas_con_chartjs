@@ -70,14 +70,26 @@ async function mostrarGrafica() {
     const myChart = new Chart("grafica", {
       type: "line",
       data: {
+
         labels: xValues,
         datasets: [
           {
-            data: yValues
+            data: yValues,
+            label: "Precio dolar",
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            borderColor: "rgba(75, 192, 192, 1)",
+            borderWidth: 1,
+            lineTension: 0,
           }
         ]
       },
-      options: {}
+      options: {
+        title: {
+          legend: { display: false },
+          display: true,
+          text: "Precio dolar durante los últimos días"
+        }
+      }
     });
 
   } catch (error) {
